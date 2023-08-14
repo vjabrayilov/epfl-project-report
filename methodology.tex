@@ -1,0 +1,63 @@
+\section{Methodology}
+\label{sec:methodology}
+
+\textit{\subsection{Motivation}}
+
+
+One of the key challenges in dealing with Metastable failures
+is that they are usually difficult to diagnose[ref].
+This is because, unlike other traditional failures, they manifest not as 
+semantic errors or crashes, but as consistent low good throughput (or goodput).
+Bronson \etal [ref] in their survery show that once such failures occur, it usually
+takes hours for engineers to bring the system back to its original throughput state.
+
+The next challenge that the class of Metastable failures present is recovery.
+Aside from the significant downtime compared to other \XXX{classical faliures \YK{Use another phrase?}},
+recovery from a Metastable failure state is also expensive, since it usually ends up requiring system reboots.
+System reboots as a mode of recovery come with two major drawbacks - one, it usually means downtime of a service
+for a noticable amount of time, and two depending on why the metastable fialure occured or what the reboot mechanism is,
+it could lead to a cascading failure i.e., the system quickly falls back into a metastable failure state because the root cause was not properly identified.
+
+Since there is no obvious reason for this to happen, resolution of such failure states
+requires hours of diagnosis by site reliability engineers and usually ends in system-reboots.
+
+Since diagnosis of the root case of a Metastable failure is hard, and
+recovery of the system from such a state is expensive, it becomes interesting 
+to think about ways to detect both 
+
+The semantics dont matter, more than in as much they affect the output.
+
+As a simulation model, if we could get it done then it would work.
+
+\textit{\subsection{Idea}}
+
+A key characteristic of Metastable failures is that they manifest
+as a consequence of system configuration, or at the boundary interaction 
+of components in a Distributed System. Put differently, it is important
+to realise that their occurance is not necessarily inferred from the semantics of 
+processing one input by a component on its fast path, rather from the semantics of 
+interaction of components based on externally observable state and configuration. 
+
+We use the above observation to come up with the notion of analysing the
+externally observable behaviour of a distributed system over a configuration space.
+The essence of this notion is the following - given a distributed system ,if we are able to 
+distill out the semantics of how a given component will behave with respect to its own configuration,
+and the externally observable state and behaviour of other components it interacts with, we
+can then generate a \textit{summary} of this component that is free from its own internal semantics of processing requests.
+The hope is that such summaries will be simple enough that they can be stitched together to come up with an abstract view of
+the distributed system that only exposes enough information to reason about the property we care about - which in our case is metastability.
+This notion is general enough to also support reasoning about other use cases.
+
+
+Simulate the interaction of a distributed system. 
+
+Make parts of the smiulation symbolic i.e., variable.
+
+\textit{\subsection{Implementation}}
+
+There are multiple potential \XXX{techniques\YK{different word}} that can be
+employed to materialize the above idea \XXX{add section number} 
+A setup that simualates abstract time stpes through a distributed execution.
+
+
+

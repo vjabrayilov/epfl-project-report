@@ -1,0 +1,432 @@
+% Copied from kcombiner-paper
+
+\usepackage{times}
+
+% \renewcommand{\ttdefault}{pxtt}
+
+% \newcommand{\URL}{\url}
+% \newcommand{\cc}[1]{\mbox{\smaller[0.5]\texttt{#1}}}
+
+% % enable the below for ACM camera ready
+% %\clubpenalty=10000
+% %\widowpenalty=10000
+% %\renewcommand*{\bibfont}{\raggedright}
+
+% %\linespread{1.2}
+
+% % \fvset{fontsize=\scriptsize,xleftmargin=8pt,numbers=left,numbersep=5pt}
+
+% % \input{code/fmt}
+% \newcommand{\figrule}{\hrule width \hsize height .33pt}
+% \newcommand{\coderule}{\vspace{-0.5em}\figrule\vspace{0.2em}}
+
+% \setlength{\abovedisplayskip}{0pt}
+% \setlength{\abovedisplayshortskip}{0pt}
+% \setlength{\belowdisplayskip}{0pt}
+% \setlength{\belowdisplayshortskip}{0pt}
+% \setlength{\jot}{0pt}
+
+% \def\Snospace~{\S{}}
+% \renewcommand*\sectionautorefname{\Snospace}
+% \def\sectionautorefname{\Snospace}
+% \def\subsectionautorefname{\Snospace}
+% \def\subsubsectionautorefname{\Snospace}
+% \def\chapterautorefname{\Snospace}
+%\renewcommand{\figurename}{Fig.}
+%\def\figureautorefname{\figurename}
+% \newcommand{\subfigureautorefname}{\figureautorefname}
+
+%\numberwithin{equation}{section}
+% \newcommand{\yes}{Y}
+% \newcommand{\no}{}
+
+% % sema
+% \newcommand{\shl}{\ \cc{<}\cc{<}\ }
+% \newcommand{\shr}{\ \cc{>}\cc{>}\ }
+\newcommand{\x}{$\times$\xspace}
+
+% \if 0
+% \renewcommand{\topfraction}{0.9}
+% \renewcommand{\dbltopfraction}{0.9}
+% \renewcommand{\bottomfraction}{0.8}
+% \renewcommand{\textfraction}{0.05}
+% \renewcommand{\floatpagefraction}{0.9}
+% \renewcommand{\dblfloatpagefraction}{0.9}
+% \setcounter{topnumber}{10}
+% \setcounter{bottomnumber}{10}
+% \setcounter{totalnumber}{10}
+% \setcounter{dbltopnumber}{10}
+% \fi
+
+% \newif\ifdraft\drafttrue
+% \newif\ifnotes\notestrue
+% \ifdraft\else\notesfalse\fi
+
+% % hide comments
+% % \renewcommand{\TK}[1]{\ignorespaces}
+% % \renewcommand{\XXX}[1]{\ignorespaces}
+% % \renewcommand{\TODO}[1]{\ignorespaces}
+
+% %% Ensure ligatures (e.g., ``fine official flag'') can be copy/pasted from PDF.
+% \input{glyphtounicode}
+% \pdfgentounicode=1
+
+% \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+% % include macros
+% \newcommand{\includepdf}[1]{
+%   \includegraphics[width=\columnwidth]{#1}
+% }
+% \newcommand{\includeplot}[1]{
+%   \resizebox{\columnwidth}{!}{\input{#1}}
+% }
+
+% % list
+% \newcommand{\squishlist}{
+% \begin{itemize}[noitemsep,nolistsep]
+%   \setlength{\itemsep}{-0pt}
+% }
+% \newcommand{\squishend}{
+%   \end{itemize}
+% }
+
+% \newcommand{\squishnumberedlist}{
+% \begin{enumerate}[noitemsep,nolistsep]
+%   \setlength{\itemsep}{-0pt}
+% }
+% \newcommand{\squishnumberedend}{
+%   \end{enumerate}
+% }
+
+
+%%
+%% NOTE.
+%%  to use circled number in caption, use
+%%   (e.g., \protect\WC{1})
+%%
+\usepackage{tikz}
+\newcommand*\WC[1]{%
+\begin{tikzpicture}[baseline=(C.base)]
+\node[draw,circle,inner sep=0.2pt](C) {#1};
+\end{tikzpicture}}
+
+\newcommand*\BC[1]{%
+\begin{tikzpicture}[baseline=(C.base)]
+\node[draw,circle,fill=black,inner sep=0.2pt](C) {\textcolor{white}{#1}};
+\end{tikzpicture}}
+
+\newcommand*\FC[1]{%
+\begin{tikzpicture}[baseline=(C.base)]
+\node[draw,circle,fill=white,inner sep=0.2pt](C) {\textcolor{black}{#1}};
+\end{tikzpicture}}
+
+
+\usepackage{xstring}
+\newcommand{\PP}[1]{
+\vspace{2px}
+\noindent{\bf \IfEndWith{#1}{.}{#1}{#1.}}
+}
+
+\newcommand{\PN}[1]{
+\vspace{2px}
+\noindent{\bf #1}
+}
+
+\newcommand{\PI}[1]{
+\noindent{\textit{#1}}
+}
+
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\newcommand{\V}{\checkmark}
+\newcommand{\X}{{\footnotesize $\times$}\xspace}
+\renewcommand{\O}{\phantom{0}}
+
+%% units
+\newcommand{\B}{\,\text{B}\xspace}
+\newcommand{\K}{\,\text{K}\xspace}
+\newcommand{\M}{\,\text{M}\xspace}
+\newcommand{\T}{\,\text{T}\xspace}
+\newcommand{\KB}{\,\text{KB}\xspace}
+\newcommand{\MB}{\,\text{MB}\xspace}
+\newcommand{\GB}{\,\text{GB}\xspace}
+\newcommand{\TB}{\,\text{TB}\xspace}
+
+\newcommand{\Bs}{\,\text{B/s}\xspace}
+\newcommand{\KBs}{\,\text{KB/s}\xspace}
+\newcommand{\MBs}{\,\text{MB/s}\xspace}
+\newcommand{\GBs}{\,\text{GB/s}\xspace}
+
+\newcommand{\etal}{\textit{et al}.\xspace}
+\newcommand{\ie}{\textit{i}.\textit{e}.}
+\newcommand{\eg}{\textit{e}.\textit{g}.}
+
+% support for algorithm
+\newcommand{\phase}[1]{\mbox{\textcolor{brown}{Phase #1}}\xspace}
+
+\newcommand{\wprcsd}{\mbox{\textcolor{black}{PRCSD}}\xspace}
+\newcommand{\wunprcsd}{\mbox{\textcolor{black}{UNPRCSD}}\xspace}
+\newcommand{\wtransfer}{\mbox{\textcolor{black}{TRANSFER}}\xspace}
+\newcommand{\wprcsing}{\mbox{\textcolor{black}{PRCSING}}\xspace}
+\newcommand{\wparked}{\mbox{\textcolor{black}{PARKED}}\xspace}
+
+\newcommand{\wwp}{\mbox{\cc{WP}}\xspace}
+\newcommand{\wrcnt}{\mbox{\cc{RCNT}}\xspace}
+\newcommand{\wwait}{\mbox{\cc{WW}}\xspace}
+
+\newcommand{\locked}{\textcolor{brown}{LOCKED}}
+\newcommand{\unlocked}{\textcolor{brown}{UNLOCKED}}
+\newcommand{\combiner}{\textcolor{brown}{LOCKED\_COMBINER}}
+
+\newcommand{\xeight}{\mbox{\cc{X86}}\xspace}
+\newcommand{\xeon}{\mbox{\cc{Xeon}}\xspace}
+\newcommand{\intel}{\mbox{\cc{Intel}}\xspace}
+\newcommand{\xeonepoch}{\mbox{\cc{Xeon\textsuperscript{ORDO}}}\xspace}
+\newcommand{\xphi}{\mbox{\cc{Phi}}\xspace}
+\newcommand{\xphiepoch}{\mbox{\cc{Phi\textsuperscript{ORDO}}}\xspace}
+\newcommand{\arm}{\mbox{\cc{ARM}}\xspace}
+\newcommand{\armepoch}{\mbox{\cc{ARM\textsuperscript{ORDO}}}\xspace}
+\newcommand{\amd}{\mbox{\cc{AMD}}\xspace}
+\newcommand{\amdepoch}{\mbox{\cc{AMD\textsuperscript{ORDO}}}\xspace}
+\newcommand{\sparc}{\mbox{\cc{Sparc}}\xspace}
+\newcommand{\stick}{\mbox{\cc{stick}}\xspace}
+\newcommand{\cntvct}{\mbox{\cc{cntvct}}\xspace}
+\newcommand{\sparcepoch}{\mbox{\cc{Sparc\textsuperscript{ORDO}}}\xspace}
+
+\newcommand{\rdtscp}{\mbox{\cc{RDTSCP}}\xspace}
+\newcommand{\rdtsc}{\mbox{\cc{RDTSC}}\xspace}
+\newcommand{\rlu}{\mbox{\cc{RLU}}\xspace}
+\newcommand{\rluepoch}{\mbox{\cc{RLU\textsuperscript{ORDO}}}\xspace}
+\newcommand{\oplogepoch}{\mbox{\cc{Oplog\textsuperscript{ORDO}}}\xspace}
+\newcommand{\rmap}{\mbox{\cc{rmap}}\xspace}
+\newcommand{\ebstack}{\mbox{\cc{EB-stack}}\xspace}
+\newcommand{\tsstack}{\mbox{\cc{TS-stack}}\xspace}
+\newcommand{\tsstackepoch}{\mbox{\cc{TS\textsuperscript{ORDO}-stack}}\xspace}
+\newcommand{\vanilla}{\mbox{\cc{Vanilla}}\xspace}
+\newcommand{\mosbench}{\mbox{\cc{Mosbench}}\xspace}
+\newcommand{\oplog}{\mbox{\cc{Oplog}}\xspace}
+
+% STM
+\newcommand{\tl}{\mbox{\cc{TL2}}\xspace}
+\newcommand{\lsa}{\mbox{\cc{LSA}}\xspace}
+\newcommand{\stm}{\mbox{\cc{STM}}\xspace}
+\newcommand{\tlepoch}{\mbox{\cc{TL2\textsuperscript{ORDO}}}\xspace}
+
+% DB
+\newcommand{\occ}{\mbox{\cc{OCC}}\xspace}
+\newcommand{\occepoch}{\mbox{\cc{OCC\textsuperscript{ORDO}}}\xspace}
+\newcommand{\mvcc}{\mbox{\cc{Hekaton}}\xspace}
+\newcommand{\mcc}{\mbox{\cc{MVCC}}\xspace}
+\newcommand{\mvccepoch}{\mbox{\cc{Hekaton\textsuperscript{ORDO}}}\xspace}
+\newcommand{\silo}{\mbox{\cc{Silo}}\xspace}
+\newcommand{\tictoc}{\mbox{\cc{TicToc}}\xspace}
+\newcommand{\hekaton}{\mbox{\cc{Hekaton}}\xspace}
+\newcommand{\hekatonepoch}{\mbox{\cc{Hekaton\textsuperscript{ORDO}}}\xspace}
+
+\newcommand{\czero}{\mbox{\cc{c$_{0}$}}\xspace}
+\newcommand{\cone}{\mbox{\cc{c$_{1}$}}\xspace}
+\newcommand{\cn}{\mbox{\cc{c$_{N}$}}\xspace}
+\newcommand{\ci}{\mbox{\cc{c$_{i}$}}\xspace}
+\newcommand{\cj}{\mbox{\cc{c$_{j}$}}\xspace}
+\newcommand{\cp}{\mbox{\cc{c$_{p}$}}\xspace}
+\newcommand{\cq}{\mbox{\cc{c$_{q}$}}\xspace}
+\newcommand{\thread}{\mbox{\cc{t}}\xspace}
+\newcommand{\waiter}{\mbox{\cc{W}}\xspace}
+\newcommand{\holder}{\mbox{\cc{H}}\xspace}
+\newcommand{\comb}{\mbox{\cc{C}}\xspace}
+\newcommand{\qnode}{\mbox{\cc{qnode}}\xspace}
+\newcommand{\qprev}{\mbox{\cc{qprev}}\xspace}
+\newcommand{\qlast}{\mbox{\cc{qlast}}\xspace}
+\newcommand{\qcurr}{\mbox{\cc{qcurr}}\xspace}
+\newcommand{\qnext}{\mbox{\cc{qnext}}\xspace}
+\newcommand{\writer}{\mbox{\cc{W}}\xspace}
+\newcommand{\writerbyte}{\mbox{\cc{WB}}\xspace}
+\newcommand{\rcounter}{\mbox{\cc{Rcount}}\xspace}
+\newcommand{\readerbytes}{\mbox{\cc{RBs}}\xspace}
+\newcommand{\waitlock}{\mbox{\cc{wlock}}\xspace}
+\newcommand{\shuffler}{\mbox{\cc{$\texttt{S}$}}\xspace}
+\newcommand{\reader}{\mbox{\cc{R}}\xspace}
+\newcommand{\tzero}{\mbox{\cc{t$_{0}$}}\xspace}
+\newcommand{\tone}{\mbox{\cc{t$_{1}$}}\xspace}
+\newcommand{\ttwo}{\mbox{\cc{t$_{2}$}}\xspace}
+\newcommand{\tthree}{\mbox{\cc{t$_{3}$}}\xspace}
+\newcommand{\tfour}{\mbox{\cc{t$_{4}$}}\xspace}
+\newcommand{\tfive}{\mbox{\cc{t$_{5}$}}\xspace}
+\newcommand{\mstack}{\mbox{\cc{M}}\xspace}
+\newcommand{\msone}{\mbox{\cc{M$_{1}$}}\xspace}
+\newcommand{\mstwo}{\mbox{\cc{M$_{2}$}}\xspace}
+\newcommand{\msthree}{\mbox{\cc{M$_{3}$}}\xspace}
+\newcommand{\msfour}{\mbox{\cc{M$_{4}$}}\xspace}
+\newcommand{\msfive}{\mbox{\cc{M$_{5}$}}\xspace}
+\newcommand{\estack}{\mbox{\cc{E}}\xspace}
+\newcommand{\esone}{\mbox{\cc{E$_{1}$}}\xspace}
+\newcommand{\estwo}{\mbox{\cc{E$_{2}$}}\xspace}
+\newcommand{\esthree}{\mbox{\cc{E$_{3}$}}\xspace}
+\newcommand{\esfour}{\mbox{\cc{E$_{4}$}}\xspace}
+\newcommand{\esfive}{\mbox{\cc{E$_{5}$}}\xspace}
+
+
+\newcommand\floor[1]{\lfloor#1\rfloor}
+\newcommand\ceil[1]{\lceil#1\rceil}
+
+\newcommand{\gpa}{\mbox{\cc{gpa}}\xspace}
+\newcommand{\ept}{\mbox{\cc{EPT}}\xspace}
+\newcommand{\hpa}{\mbox{\cc{hpa}}\xspace}
+\newcommand{\lzero}{\mbox{{L$_0$}}\xspace}
+\newcommand{\lone}{\mbox{{L$_1$}}\xspace}
+\newcommand{\ltwo}{\mbox{{L$_2$}}\xspace}
+\newcommand{\vcs}{\mbox{\cc{$e$CS}}\xspace}
+\newcommand{\vcss}{\mbox{\cc{$e$CSs}}\xspace}
+\newcommand{\ecs}{\mbox{\cc{$e$CS}}\xspace}
+\newcommand{\ecss}{\mbox{\cc{$e$CSs}}\xspace}
+\newcommand{\pvm}{\mbox{\cc{PVM}}\xspace}
+\newcommand{\fpvm}{\mbox{\cc{Fair-PVM}}\xspace}
+\newcommand{\hvm}{\mbox{\cc{HVM}}\xspace}
+\newcommand{\lhp}{\mbox{\cc{LHP}}\xspace}
+\newcommand{\vmresume}{\mbox{\cc{VMRESUME}}\xspace}
+\newcommand{\vmlaunch}{\mbox{\cc{VMLAUNCH}}\xspace}
+\newcommand{\vmread}{\mbox{\cc{VMREAD}}\xspace}
+\newcommand{\vmfunc}{\mbox{\cc{VMFUNC}}\xspace}
+\newcommand{\vmwrite}{\mbox{\cc{VMWRITE}}\xspace}
+\newcommand{\intr}{\mbox{\cc{EXT\_INTR}}\xspace}
+\newcommand{\hlt}{\mbox{\cc{HLT}}\xspace}
+\newcommand{\timer}{\mbox{\cc{PRTIMER}}\xspace}
+\newcommand{\msr}{\mbox{\cc{MSRW}}\xspace}
+\newcommand{\msrwrite}{\mbox{\cc{MSR\_WRITE}}\xspace}
+\newcommand{\nblhp}{\mbox{\cc{NB-LHP}}\xspace}
+\newcommand{\blhp}{\mbox{\cc{B-LHP}}\xspace}
+\newcommand{\lwp}{\mbox{\cc{LWP}}\xspace}
+\newcommand{\rhp}{\mbox{\cc{RHP}}\xspace}
+\newcommand{\bww}{\mbox{\cc{BWW}}\xspace}
+\newcommand{\rcu}{\mbox{\cc{RCU}}\xspace}
+\newcommand{\rrp}{\mbox{\cc{RRP}}\xspace}
+\newcommand{\rp}{\mbox{\cc{RP}}\xspace}
+\newcommand{\icp}{\mbox{\cc{ICP}}\xspace}
+\newcommand{\bravo}{\mbox{\cc{BRAVO}}\xspace}
+\newcommand{\xfs}{\mbox{\cc{XFS}}\xspace}
+\newcommand{\cfs}{\mbox{\cc{CFS}}\xspace}
+\newcommand{\VBench}{\mbox{\cc{VBench}}\xspace}
+\newcommand{\oticket}{\mbox{\cc{oticket}}\xspace}
+\newcommand{\qspin}{\mbox{\cc{qspinlock}}\xspace}
+\newcommand{\spinlock}{\mbox{\cc{spinlock}}\xspace}
+\newcommand{\rwlock}{\mbox{\cc{rwlock}}\xspace}
+\newcommand{\rwsem}{\mbox{\cc{rwsem}}\xspace}
+\newcommand{\pcpurwsem}{\mbox{\cc{percpu-rwsem}}\xspace}
+\newcommand{\mutex}{\mbox{\cc{mutex}}\xspace}
+\newcommand{\nschdmutex}{\mbox{\cc{CST-mutex}}\xspace}
+\newcommand{\nschdrwsem}{\mbox{\cc{CST-rwsem}}\xspace}
+\newcommand{\pmutex}{\mbox{\cc{pthread\_mutex}}\xspace}
+\newcommand{\prwlock}{\mbox{\cc{prwlock}}\xspace}
+\newcommand{\vcpuone}{\mbox{\cc{vCPU$_1$}}\xspace}
+\newcommand{\vcputwo}{\mbox{\cc{vCPU$_2$}}\xspace}
+\newcommand{\procone}{\mbox{\cc{Proc$_1$}}\xspace}
+\newcommand{\proctwo}{\mbox{\cc{Proc$_2$}}\xspace}
+\newcommand{\vmone}{\mbox{\cc{VM$_1$}}\xspace}
+\newcommand{\vmtwo}{\mbox{\cc{VM$_2$}}\xspace}
+\newcommand{\vcpu}{\mbox{\cc{vCPU}}\xspace}
+\newcommand{\vcpus}{\mbox{\cc{vCPUs}}\xspace}
+\newcommand{\pcpu}{\mbox{\cc{pCPU}}\xspace}
+\newcommand{\pcpus}{\mbox{\cc{pCPUs}}\xspace}
+\newcommand{\tas}{\mbox{\smaller[0.8]TAS}\xspace}
+\newcommand{\mcs}{\mbox{\smaller[0.8]MCS}\xspace}
+\newcommand{\mcstp}{\mbox{\smaller[0.8]MCSTP}\xspace}
+\newcommand{\hmcs}{\mbox{\smaller[0.8]HMCS}\xspace}
+\newcommand{\ahmcs}{\mbox{\smaller[0.8]AHMCS}\xspace}
+\newcommand{\hmcsrw}{\mbox{CohortRW}\xspace}
+\newcommand{\cohort}{\mbox{Cohort}\xspace}
+\newcommand{\cna}{\mbox{\smaller[0.8]CNA}\xspace}
+\newcommand{\shfllock}{\mbox{\smaller[0.8]ShflLock}\xspace}
+\newcommand{\stock}{\mbox{\smaller[0.8]Stock}\xspace}
+\newcommand{\clh}{\mbox{\smaller[0.8]CLH}\xspace}
+\newcommand{\ticket}{\mbox{Ticket}\xspace}
+\newcommand{\cst}{\mbox{\smaller[0.8]{CST}}\xspace}
+\newcommand{\pthreadm}{\mbox{{Pthread$_{(M)}$}}\xspace}
+\newcommand{\pthreads}{\mbox{{Pthread$_{(S)}$}}\xspace}
+\newcommand{\pthreadrw}{\mbox{{Pthread$_{(RW)}$}}\xspace}
+\newcommand{\pthreadrwba}{\mbox{{BA-Pthread$_{(RW)}$}}\xspace}
+\newcommand{\pthread}{\mbox{{Pthread}}\xspace}
+\newcommand{\metis}{\mbox{{Metis}}\xspace}
+\newcommand{\mwrl}{\mbox{{MWRL}}\xspace}
+\newcommand{\mwcl}{\mbox{{MWCL}}\xspace}
+\newcommand{\mwrm}{\mbox{{MWRM}}\xspace}
+\newcommand{\mwcm}{\mbox{{MWCM}}\xspace}
+\newcommand{\mrdm}{\mbox{{MRDM}}\xspace}
+\newcommand{\mrph}{\mbox{{MRPH}}\xspace}
+\newcommand{\dwom}{\mbox{{DWOM}}\xspace}
+\newcommand{\opone}{\mbox{{open1}}\xspace}
+\newcommand{\optwo}{\mbox{{open2}}\xspace}
+\newcommand{\lkone}{\mbox{{lock1}}\xspace}
+\newcommand{\lktwo}{\mbox{{lock2}}\xspace}
+\newcommand{\pbzip}{\mbox{{Pbzip2}}\xspace}
+\newcommand{\exim}{\mbox{\textsc{Exim}}\xspace}
+\newcommand{\gmake}{\mbox{\textsc{Gmake}}\xspace}
+\newcommand{\lkc}{\mbox{\textsc{LKC}}\xspace}
+\newcommand{\apache}{\mbox{\textsc{Apache}}\xspace}
+\newcommand{\psearchy}{\mbox{\textsc{Psearchy}}\xspace}
+\newcommand{\sspin}{\mbox{\textsc{SchdSpin}}\xspace}
+\newcommand{\vspin}{\mbox{\textsc{$e$SchdSpin}}\xspace}
+\newcommand{\gce}{\mbox{\cc{GCE}}\xspace}
+\newcommand{\baremetal}{\mbox{\cc{B192}}\xspace}
+\newcommand{\linuxperf}{\mbox{\texttt{perf\_events}}\xspace}
+\newcommand{\ebpf}{\mbox{\texttt{eBPF}}\xspace}
+\newcommand{\kernbench}{\mbox{\texttt{kernbench}}\xspace}
+\newcommand{\llc}{\mbox{\cc{LLC}}\xspace}
+\newcommand{\cas}{\mbox{\cc{CAS}}\xspace}
+\newcommand{\faa}{\mbox{\cc{FAA}}\xspace}
+\newcommand{\swap}{\mbox{\cc{SWAP}}\xspace}
+\newcommand{\swaping}{\mbox{\cc{SWAP}ing}\xspace}
+
+\newcommand{\syss}{\mbox{\textsc{TCLock$^{NB}$}}\xspace}
+\newcommand{\syslocks}{\mbox{\textsc{TCLocks}}\xspace}
+\newcommand{\sysm}{\mbox{\textsc{TCLock$^{B}$}}\xspace}
+\newcommand{\sysrw}{\mbox{\textsc{TCLock$^{RW}$}}\xspace}
+\newcommand{\lholder}{lock holder\xspace}
+\newcommand{\lwaiter}{lock waiter\xspace}
+
+
+% data info
+\newcommand{\ldata}{\mbox{Lock$_{struct}$}\xspace}
+\newcommand{\tsdata}{\mbox{Thread$_{Shared}$}\xspace}
+\newcommand{\lsdata}{\mbox{Thread$_{Local}$}\xspace}
+
+% boxbeg/end
+\newcommand{\boxbeg}{
+\vspace{2px}
+\noindent\begin{tabular}{|l|}\hline
+\begin{minipage}{3.2in}
+\vspace{2px}
+\noindent
+}
+
+\newcommand{\boxend}{
+\vspace{2px}
+\end{minipage}\\ \hline
+\end{tabular}
+\vspace{-10pt}
+}
+
+%\if 1
+% ref. http://en.wikibooks.org/wiki/LaTeX/Colors
+\newcommand{\SK}[1]{\textcolor{orange}{SK: #1}}
+\newcommand{\VG}[1]{\textcolor{violet}{VG: #1}}
+\newcommand{\KK}[1]{\textcolor{green}{KK: #1}}
+\newcommand{\YK}[1]{\textcolor{blue}{YK: #1}}
+\newcommand{\DZ}[1]{\textcolor{brown}{DZ: #1}}
+\newcommand{\PJ}[1]{\textcolor{purple}{PJ: #1}}
+\newcommand{\KKD}[1]{\textcolor{red}{KKD: #1}}
+\newcommand{\XX}[0]{\textcolor{red}{XXX}}
+\newcommand{\XXX}[1]{\textcolor{red}{XXX: #1}}
+\newcommand{\TODO}[1]{\textcolor{Melon}{TODO: #1}}
+%\fi
+
+\if 0
+\newcommand{\SK}[1]{}
+\newcommand{\VG}[1]{}
+\newcommand{\KK}[1]{}
+\newcommand{\YK}[1]{}
+\newcommand{\DZ}[1]{}
+\newcommand{\PJ}[1]{}
+\newcommand{\XX}[0]{}
+\newcommand{\XXX}[1]{}
+\newcommand{\TODO}[1]{}
+\newcommand{\KKD}[1]{}
+\fi

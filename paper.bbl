@@ -1,0 +1,10 @@
+\begin{thebibliography}{1}
+
+\bibitem{mtsb_hotos}
+{\sc Bronson, N., Aghayev, A., Charapko, A., and Zhu, T.}
+\newblock Metastable failures in distributed systems.
+\newblock In {\em Proceedings of the Workshop on Hot Topics in Operating
+  Systems\/} (New York, NY, USA, 2021), HotOS '21, Association for Computing
+  Machinery, p.~221–227.
+
+\end{thebibliography}
