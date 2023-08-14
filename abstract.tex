@@ -1,14 +1,8 @@
 \begin{abstract}
 
-Distributed systems present new and difficult to study failure modes.
+Metastable failures are an outlier class of failures within distributed systems that are much easier to explain than to predict. Prior works \cite{mtsb_hotos, mtsb_osdi} show that they can be understood within the same framework even though they initially look different. A systematic approach for building metastable failure tolerant distributed systems  as well as detecting them before happening is an open problem that this paper takes attempt to solve. 
 
-Symbolically executing distrubuted systems is hard.
-
-In this paper we discuss an idea on how to reason about distributed systems using symbolic
-execution along with a prelimiary evaluation of how this approach can be employed to detect
-metastable failures.
-
-% We present an approach to symbex distributed systems to detect presence of metastability.
+First, we show why formal specification doesn't work well enough by applying it to a synthetic benchmark problem. Later we introduce how SMT($\mathcal{LRA}$) constraints of the system can help to detect metastable failures before they happen. We also introduce a way to learn SMT($\mathcal{LRA}$) constraints of the system using run time metrics which are regularly collected for observability. purposes. 
 
 \end{abstract}
 
